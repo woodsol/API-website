@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <title>Game Search</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>🎮 Game Search</h1>
+
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search for a game..." />
+    <button id="searchBtn">Search</button>
+  </div>
+
+  <div id="movieList"></div> <!-- reuse movieList container -->
+
+
+
+  <div id="movieModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <div id="modalDetails"></div>
+  </div>
+</div>
+
+
+  <button id="toggleSidebarBtn">☰ Menu</button>
+
+   <div id="sidebar">
+    <br /><br /><br />
+
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/index.html"><h2>Movie Search</h2></a><n></n>
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/gameSearch.html"><h2>Game Search</h2></a>
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/favorites.html"><h2>Favorites</h2></a>
+    
+    <br />
+    <hr />
+    <label class="dark-mode-toggle">
+      <input type="checkbox" id="sidebarDarkToggle" /> Dark Mode
+    </label>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

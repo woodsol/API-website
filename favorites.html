@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Favorites</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <button id="toggleSidebarBtn">☰</button>
+    <br /><br /><br />
+
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/index.html"><h2>Movie Search</h2></a><n></n>
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/gameSearch.html"><h2>Game Search</h2></a>
+    <a href="file:///C:/Users/User/Python%20test%20files/Projects/Movie-Search-App/favorites.html"><h2>Favorites</h2></a>
+
+
+    <label>
+      <input type="checkbox" id="sidebarDarkToggle"> Dark Mode
+    </label>
+  </div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <header>
+      <h1>⭐ Favorites</h1>
+
+    </header>
+
+    <!-- Filters -->
+    <section class="filter-section">
+      <h2>Select Category</h2>
+      <select id="typeFilter">
+        <option value="all">All</option>
+        <option value="movie">Movies</option>
+        <option value="game">Games</option>
+      </select>
+      <br /><br />
+
+      <!-- Movie filters -->
+      <div id="movieFilters" style="display: none;" class="filter-group">
+        <label for="movieGenreFilter">Genre:</label>
+        <select id="movieGenreFilter">
+          <option value="all">All</option>
+        </select>
+
+        <label for="movieSortBy">Sort By:</label>
+        <select id="movieSortBy">
+          <option value="title">Title</option>
+          <option value="rating">IMDb Rating</option>
+          <option value="length">Runtime</option>
+        </select>
+      </div>
+
+      <!-- Game filters -->
+      <div id="gameFilters" style="display: none;" class="filter-group">
+        <label for="gameGenreFilter">Genre:</label>
+        <select id="gameGenreFilter">
+          <option value="all">All</option>
+        </select>
+
+        <label for="gameSortBy">Sort By:</label>
+        <select id="gameSortBy">
+          <option value="title">Title</option>
+          <option value="rating">User Rating</option>
+          <option value="length">Playtime</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Favorites Grid -->
+    <section class="favorites-display">
+      <ul id="favoritesList" class="favorites-grid"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

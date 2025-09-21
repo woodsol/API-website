@@ -1,0 +1,304 @@
+body {
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+
+body.dark {
+  background-color: #111111e8;
+  color: #f0f0f0;
+}
+
+body.dark .movie-card {
+  background-color: #222;
+  border-color: #333;
+}
+
+.dark-toggle {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.search-box {
+  margin-bottom: 20px;
+}
+
+#searchInput {
+  padding: 10px;
+  width: 250px;
+}
+
+#movieList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.movie-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  width: 200px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  overflow: auto;
+}
+
+.modal-content {
+  background-color: white;
+  margin: 5% auto;
+  padding: 16px;
+  max-width: 400px; /* smaller width */
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.close-btn {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff;
+}
+
+
+
+.modal-content img {
+  width: 80%;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+#toggleSidebarBtn {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1001;
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#sidebar {
+  position: fixed;
+  left: -250px;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+#sidebar.active {
+  left: 0;
+}
+
+#sidebar h2 {
+  margin-top: 0;
+}
+
+#favoritesList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dark-mode-toggle {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+body.dark #sidebar {
+  background-color: #111;
+}
+
+#favoritesList li {
+  margin-bottom: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(-10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+a {
+  color: inherit;      /* Removes blue color, inherits parent color */
+  text-decoration: none; /* Removes underline */
+  outline: none;        /* Removes focus outline (optional) */
+}
+
+a:focus, a:hover, a:active {
+  outline: none;        /* Prevents focus outline on keyboard navigation */
+  text-decoration: none; /* Keeps underline removed on hover/focus */
+  color: inherit;       /* Keeps color consistent on hover/focus */
+}
+
+.movie-card img,
+.favorite-card img {
+  width: 200px;
+  height: 300px;
+  object-fit: cover;
+}
+
+
+
+.modal-content p{
+  color: white
+}
+.modal-content h2 {
+  color: white
+}
+.modal-content h3{
+  color: #ffff;
+}
+.modal-content strong {
+   color: rgba(255, 0, 242, 0.733) !important;
+  text-shadow:
+    0 0 2px rgba(255, 0, 242, 0.733),
+    0 0 5px rgba(255, 0, 242, 0.733),
+    0 0 15px rgba(255, 0, 242, 0.733),
+    0 0 25px rgba(255, 0, 242, 0.733);
+}
+.modal-content button {
+  color: black
+}
+
+
+#sidebar {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Horizontal offset, blur, transparency */
+}
+
+#layoutToggleContainer {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 2000;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+body.dark #layoutToggleContainer {
+  background: #222;
+  color: #eee;
+}
+
+
+#movieModal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#movieModal .modal-content {
+  background: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* Default: vertical layout */
+  gap: 20px;
+  max-width: 40vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #222; /* match sidebar dark background */
+  border: 2px solid #0ff; /* neon cyan border */
+  box-shadow:
+    0 0 10px #0ff,
+    0 0 20px #0ff,
+    0 0 30px #0ff;
+  border-radius: 12px;
+  color: #0ff; /* neon cyan text */
+  transition: all 0.3s ease;
+}
+
+/* Horizontal layout */
+#movieModal.horizontal .modal-content {
+  flex-direction: row;
+}
+
+
+#favoritesLayoutToggleContainer {
+  position: fixed;
+  top: 10px;
+  right: 20px;
+  z-index: 2000;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  font-size: 14px;
+}
+
+body.dark #favoritesLayoutToggleContainer {
+  background: #222;
+  color: #eee;
+}
+
+#favoritesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+body.vertical-layout #favoritesList {
+  flex-direction: column;
+  align-items: center;
+}
+
+body.horizontal-layout #favoritesList {
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.favorite-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+  width: 250px;
+}
+
+body.dark .favorite-card {
+  background-color: #222;
+  border-color: #333;
+  color: #f0f0f0;
+}
